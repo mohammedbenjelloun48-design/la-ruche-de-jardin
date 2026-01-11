@@ -1414,54 +1414,53 @@ input, select, textarea {
 
   <form class="reservation-form">
 
-    <input type="text" placeholder="Nom complet" required>
-    <input type="tel" placeholder="Téléphone" required>
-    <input type="email" placeholder="Email">
+  <input type="text" name="nom" placeholder="Nom complet" required>
+  <input type="tel" name="telephone" placeholder="Téléphone" required>
+  <input type="email" name="email" placeholder="Email">
 
-    <!-- Date -->
-    <div class="reservation-field">
-      <label>📅 Date</label>
-      <input type="date" required>
-    </div>
+  <div class="reservation-field">
+    <label>📅 Date</label>
+    <input type="date" name="date" required>
+  </div>
 
-    <!-- Heure -->
-    <div class="reservation-field">
-      <label>⏰ Heure</label>
-      <input type="time" required>
-    </div>
+  <div class="reservation-field">
+    <label>⏰ Heure</label>
+    <input type="time" name="heure" required>
+  </div>
 
-    <!-- Nombre de personnes -->
-    <select required>
-      <option value="">Nombre de personnes</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5+</option>
+  <select name="personnes" required>
+    <option value="">Nombre de personnes</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5+</option>
+  </select>
+
+  <select name="type" required>
+    <option value="">Type de réservation</option>
+    <option>Réservation classique</option>
+    <option>🎂 Anniversaire</option>
+  </select>
+
+  <!-- CHOIX MULTIPLES -->
+  <div class="reservation-field">
+    <label>Souhaitez-vous ?</label>
+    <small>يمكنك اختيار أكثر من خيار</small>
+
+    <select name="options[]" multiple size="3">
+      <option value="🎂 Gâteau d’anniversaire">🎂 Gâteau d’anniversaire</option>
+      <option value="🎈 Décoration spéciale">🎈 Décoration spéciale</option>
+      <option value="🎶 Ambiance musicale">🎶 Ambiance musicale</option>
     </select>
+  </div>
 
-    <!-- Type de réservation -->
-    <select required>
-      <option value="">Type de réservation</option>
-      <option>Réservation classique</option>
-      <option>🎂 Anniversaire</option>
-    </select>
+  <textarea name="message" placeholder="Message (ex : thème, enfants, détails...)"></textarea>
 
-    <!-- Souhaitez-vous (CHOIX MULTIPLES) -->
-    <div class="reservation-field">
-      <label>Souhaitez-vous ? (plusieurs choix possibles)</label>
-      <select multiple size="3">
-        <option>🎂 Gâteau d’anniversaire</option>
-        <option>🎈 Décoration spéciale</option>
-        <option>🎶 Ambiance musicale</option>
-      </select>
-    </div>
+  <button type="button" onclick="sendWhatsApp()">Réserver maintenant</button>
 
-    <textarea placeholder="Message (ex : thème, enfants, détails...)"></textarea>
+</form>
 
-    <button type="submit">Réserver maintenant</button>
-
-  </form>
 </section>
 
 
@@ -1547,10 +1546,49 @@ window.addEventListener("scroll", () => {
   });
 });
 </script>
+<script>
+function sendWhatsApp() {
+  const nom = document.querySelector('[name="nom"]').value.trim();
+  const tel = document.querySelector('[name="telephone"]').value.trim();
+  const date = document.querySelector('[name="date"]').value;
+  const heure = document.querySelector('[name="heure"]').value;
+  const personnes = document.querySelector('[name="personnes"]').value;
+  const type = document.querySelector('[name="type"]').value;
+  const message = document.querySelector('[name="message"]').value;
+
+  // Options multiples
+  const optionsSelect = document.querySelector('[name="options[]"]');
+  const options = [...optionsSelect.selectedOptions].map(o => o.value).join(', ') || 'Aucune';
+
+  if (!nom || !tel || !date || !heure || !personnes || !type) {
+    alert("❗ المرجو ملء جميع الخانات الضرورية");
+    return;
+  }
+
+  const text = 
+`🍽️ *Nouvelle réservation*
+👤 Nom : ${nom}
+📞 Téléphone : ${tel}
+
+📅 Date : ${date}
+⏰ Heure : ${heure}
+👥 Personnes : ${personnes}
+🎯 Type : ${type}
+✨ Options : ${options}
+
+📝 Message : ${message || '—'}`;
+
+  const whatsappNumber = "212520502676"; // عدّل الرقم إذا بغيت
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+  window.open(url, "_blank");
+}
+</script>
 
 
 </body>
 </html>
+
 
 
 
