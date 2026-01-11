@@ -4,6 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="La Ruche de Jardin – Restaurant élégant à Berrechid. Cuisine raffinée, menu varié, animations week-end, anniversaires toute l’année, espace familial et réservation en ligne.">
+   <meta property="og:title" content="La Ruche de Jardin – Restaurant & Réservation">
+  <meta property="og:description" content="Restaurant à ambiance naturelle avec réservation en ligne.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://laruche-restaurant.netlify.app/">
   <title>La Ruche de Jardin</title>
   <link rel="icon" type="image/jpng" href="image/poo.jpeg">
 
@@ -882,7 +886,39 @@ section.show {
     text-align: center;
   }
 }
+/* Fix Notre Concept on mobile */
+@media (max-width: 768px) {
+  .icons {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
+  .icons > div {
+    margin-bottom: 25px;
+  }
+}
+.reservation-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reservation-field label {
+  font-weight: 600;
+  color: #2f3e34;
+}
+
+.reservation-field {
+  grid-column: 1 / -1;
+}
+.about-features {
+  justify-items: center;
+}
+
+.about-features div {
+  text-align: center;
+}
 
 
   </style>
@@ -1349,7 +1385,7 @@ section.show {
     <input type="tel" placeholder="Téléphone" required>
     <input type="email" placeholder="Email">
 
-   <div class="reservation-field">
+<div class="reservation-field">
   <label for="date">📅 Date</label>
   <input type="date" id="date" name="date" required>
 </div>
@@ -1472,4 +1508,5 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
