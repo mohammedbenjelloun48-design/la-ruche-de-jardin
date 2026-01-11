@@ -1070,6 +1070,20 @@ input, select, textarea {
   transform: scale(1.05);
 }
 
+@media (max-width: 600px) {
+  .reservation-box {
+    padding: 40px 25px;
+    border-radius: 25px;
+  }
+
+  .reservation-box h2 {
+    font-size: 2rem;
+  }
+
+  .birthday-highlight {
+    font-size: 0.9rem;
+  }
+}
 
   </style>
   
@@ -1534,69 +1548,53 @@ input, select, textarea {
 
     <form class="reservation-form">
 
-      <div class="field">
-        <label>Nom complet</label>
-        <input type="text" name="nom" required>
-      </div>
+  <input type="text" name="nom" placeholder="Nom complet" required>
+  <input type="tel" name="telephone" placeholder="Téléphone" required>
+  <input type="email" name="email" placeholder="Email">
 
-      <div class="field">
-        <label>Téléphone</label>
-        <input type="tel" name="telephone" required>
-      </div>
+  <!-- 📅 DATE -->
+  <div class="reservation-field">
+    <label>📅 Date</label>
+    <input type="date" name="date" id="date" required>
+  </div>
 
-      <div class="field">
-        <label>Email (optionnel)</label>
-        <input type="email" name="email">
-      </div>
+  <!-- ⏰ HEURE -->
+  <div class="reservation-field">
+    <label>⏰ Heure</label>
+    <input type="time" name="heure" id="heure" required>
+  </div>
 
-      <div class="field">
-        <label>Date</label>
-        <input type="date" name="date" required>
-      </div>
+  <select name="personnes" required>
+    <option value="">Nombre de personnes</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5+</option>
+  </select>
 
-      <div class="field">
-        <label>Heure</label>
-        <input type="time" name="heure" required>
-      </div>
+  <select name="type" required>
+    <option value="">Type de réservation</option>
+    <option>Réservation classique</option>
+    <option>🎂 Anniversaire</option>
+  </select>
 
-      <div class="field">
-        <label>Nombre de personnes</label>
-        <select name="personnes" required>
-          <option value="">Choisir</option>
-          <option>1</option><option>2</option><option>3</option>
-          <option>4</option><option>5+</option>
-        </select>
-      </div>
+  <!-- OPTIONS -->
+  <div class="reservation-field">
+    <label>Souhaitez-vous ?</label>
+    <select name="options[]" multiple size="3">
+      <option>🎂 Gâteau d’anniversaire</option>
+      <option>🎈 Décoration spéciale</option>
+      <option>🎶 Ambiance musicale</option>
+    </select>
+  </div>
 
-      <div class="field">
-        <label>Type de réservation</label>
-        <select name="type" id="typeReservation" required>
-          <option value="">Choisir</option>
-          <option value="classique">Réservation classique</option>
-          <option value="anniversaire">🎂 Anniversaire</option>
-        </select>
-      </div>
+  <textarea name="message" placeholder="Message..."></textarea>
 
-      <!-- OPTIONS ANNIVERSAIRE -->
-      <div class="field options-box" id="optionsBox">
-        <label>Options anniversaire</label>
-        <select name="options[]" multiple>
-          <option>🎂 Gâteau</option>
-          <option>🎈 Décoration</option>
-          <option>🎶 Ambiance musicale</option>
-        </select>
-      </div>
+  <button type="button" onclick="sendWhatsApp()">Réserver maintenant</button>
 
-      <div class="field full">
-        <label>Message</label>
-        <textarea name="message" placeholder="Détails, enfants, thème..."></textarea>
-      </div>
+</form>
 
-      <button type="button" onclick="sendWhatsApp()">
-        Confirmer la réservation
-      </button>
-
-    </form>
   </div>
 </section>
 
@@ -1779,9 +1777,53 @@ type.addEventListener("change", () => {
     type.value === "anniversaire" ? "block" : "none";
 });
 </script>
+<script>
+function sendWhatsApp() {
+  const nom = document.querySelector('[name="nom"]').value;
+  const tel = document.querySelector('[name="telephone"]').value;
+  const date = document.querySelector('[name="date"]').value;
+  const heure = document.querySelector('[name="heure"]').value;
+  const personnes = document.querySelector('[name="personnes"]').value;
+  const type = document.querySelector('[name="type"]').value;
+  const message = document.querySelector('[name="message"]').value;
+
+  if (!nom || !tel || !date || !heure || !personnes || !type) {
+    alert("عافاك عمر جميع الخانات الضرورية");
+    return;
+  }
+
+  // Format date (YYYY-MM-DD → DD/MM/YYYY)
+  const d = new Date(date);
+  const dateFr = d.toLocaleDateString("fr-FR");
+
+  let options = "";
+  document.querySelectorAll('[name="options[]"]:checked, select[name="options[]"] option:checked')
+    .forEach(opt => options += "• " + opt.value + "%0A");
+
+  const text =
+`🍽️ *Nouvelle Réservation* 🍽️
+
+👤 Nom: ${nom}
+📞 Téléphone: ${tel}
+📅 Date: ${dateFr}
+⏰ Heure: ${heure}
+👥 Personnes: ${personnes}
+🎯 Type: ${type}
+
+🎁 Options:
+${options || "Aucune"}
+
+📝 Message:
+${message || "—"}`;
+
+  const phone = "212520502676"; // بدّلها إلا بغيت
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
+}
+</script>
 
 </body>
 </html>
+
 
 
 
