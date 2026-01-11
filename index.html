@@ -1555,7 +1555,8 @@ input, select, textarea {
   <!-- 📅 DATE -->
   <div class="reservation-field">
     <label>📅 Date</label>
-    <input type="date" name="date" id="date" required>
+   <input type="date" name="date" id="date" required>
+
   </div>
 
   <!-- ⏰ HEURE -->
@@ -1860,9 +1861,33 @@ ${message || "—"}`;
   window.open(url, "_blank");
 }
 </script>
+<script>
+  // منع اختيار تاريخ في الماضي
+  const dateInput = document.getElementById("date");
+  const today = new Date().toISOString().split("T")[0];
+  dateInput.min = today;
+
+  function sendWhatsApp() {
+    const date = document.getElementById("date").value;
+
+    if (!date) {
+      alert("❗ المرجو اختيار تاريخ الحجز");
+      return;
+    }
+
+    if (date < today) {
+      alert("❌ لا يمكن اختيار تاريخ في الماضي، المرجو اختيار تاريخ مستقبلي");
+      return;
+    }
+
+    // كمل هنا الكود ديالك ديال WhatsApp (باقي inputs)
+    alert("✅ التاريخ صحيح، سيتم إرسال الحجز");
+  }
+</script>
 
 </body>
 </html>
+
 
 
 
