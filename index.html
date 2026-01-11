@@ -846,6 +846,42 @@ section.show {
   opacity: 1;
   transform: translateY(0);
 }
+.reservation-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.reservation-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f4d3a; /* royal green */
+  margin-bottom: 6px;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 25px;
+  text-align: center;
+}
+
+.icons > div {
+  max-width: 260px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .icons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icons > div {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
 
 
 
@@ -1313,8 +1349,16 @@ section.show {
     <input type="tel" placeholder="Téléphone" required>
     <input type="email" placeholder="Email">
 
-    <input type="date" required>
-    <input type="time" required>
+        <input type="email" placeholder="Email">
+<div class="reservation-field">
+  <label for="date">📅 Date</label>
+  <input type="date" id="date" name="date" required>
+</div>
+
+<div class="reservation-field">
+  <label for="time">⏰ Heure</label>
+  <input type="time" id="time" name="time" required>
+</div>
 
     <select required>
       <option value="">Nombre de personnes</option>
@@ -1429,3 +1473,4 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
