@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="La Ruche de Jardin – Restaurant élégant à Berrechid. Cuisine raffinée, menu varié, animations week-end, anniversaires toute l’année, espace familial et réservation en ligne.">
+  <title>La Ruche de Jardin</title>
+  <link rel="icon" type="image/jpng" href="image/poo.jpeg">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+   body {
+  background-color: #ffffff;
+  color: #1F3D2B;
+}
+header {
+  position: relative;
+  height: 90vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(31, 61, 43, 0.45),
+      rgba(31, 61, 43, 0.65)
+    ),
+    url('image/mmm.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background-attachment: fixed;
+}
+
+
+  
+
+
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(201, 162, 77, 0.18),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  .logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: var(--white);
+  padding: 12px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  height: 66px;
+  width: 66px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.logo:hover {
+  transform: rotate(-2deg) scale(1.08);
+  transition: 0.4s ease;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+
+.logo img {
+  height: 55px;
+  width: auto;
+  display: block;
+}
+  
+.nav {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+
+.nav a {
+  padding: 10px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(201, 162, 77, 0.35);
+  transition: all 0.35s ease;
+}
+
+.nav a:hover {
+  background: rgba(201, 162, 77, 0.9);
+  color: #1F3D2B;
+}
+
+.nav a.active {
+  background: linear-gradient(135deg, #C9A24D, #A8842C);
+  color: #1F3D2B;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+
+    .call-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #3a5a40;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 999;
+      transition: transform 0.3s;
+    }
+    .call-fixed:hover { transform: scale(1.1); }
+    .logo span { font-family: Georgia, serif; }
+      to { opacity: 1; transform: translateY(0); }
+    .btn {
+      padding: 12px 25px;
+      background-color: #3a5a40;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      margin: 5px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #2f3e34;
+      transform: scale(1.05);
+    }
+    section {
+      padding: 60px 10%;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #3a5a40;
+    }
+    .menu-full {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .menu-item {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      border-radius: 20px;
+    }
+    footer {
+      background-color: #2f3e34;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      section { padding: 40px 6%; }
+      .menu-full { grid-template-columns: 1fr; }
+      .logo { font-size: 1rem; }
+    }
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+#gallery {
+  background: linear-gradient(
+    to bottom,
+    rgba(31, 61, 43, 0.12),
+    rgba(31, 61, 43, 0.06)
+  );
+}
+
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.15);
+}
+.menu-drop {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.menu-drop img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+.drop-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.97);
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.drop-list h3 {
+  text-align: center;
+  margin-top: 0;
+  color: #3a5a40;
+  border-bottom: 1px dashed #aaa;
+  padding-bottom: 10px;
+}
+
+.drop-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drop-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dotted #ddd;
+  font-size: 0.95rem;
+}
+
+.drop-list li span {
+  font-weight: bold;
+}
+
+
+.menu-drop:hover .drop-list {
+  transform: translateY(0);
+}
+
+.menu-drop.open .drop-list {
+  transform: translateY(0);
+}
+#reservation {
+  background: #f4f7f5;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 60px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.reservation-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.reservation-form textarea {
+  grid-column: 1 / -1;
+  resize: none;
+  height: 100px;
+}
+
+.reservation-form button {
+  grid-column: 1 / -1;
+  padding: 15px;
+  background-color: #3a5a40;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reservation-form button:hover {
+  background-color: #2f3e34;
+  transform: scale(1.03);
+}
+
+h2 {
+  color: #1F3D2B;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #C9A24D;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 5px;
+}
+
+.logo {
+  border: 2px solid #C9A24D;
+}
+
+
+.btn,
+.reservation-form button {
+  background: linear-gradient(135deg, #C9A24D, #A8842C);
+  color: #1F3D2B;
+}
+
+.btn:hover,
+.reservation-form button:hover {
+  background: #1F3D2B;
+  color: white;
+}
+
+
+.menu-drop {
+  border: 2px solid #C9A24D;
+}
+
+
+.drop-list li span {
+  color: #C9A24D;
+}
+
+.gallery-item {
+  border: 3px solid #C9A24D;
+}
+
+
+footer {
+  border-top: 3px solid #C9A24D;
+}
+.menu-drop:hover {
+  transform: translateY(-6px);
+  transition: 0.3s;
+}
+.menu-drop,
+.gallery-item {
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
+footer {
+   background-color: #1F3D2B;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer-social {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gold;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: gold;
+  color: #2f3e34;
+  transform: scale(1.2);
+}
+.drop-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.97);
+  padding: 20px;
+
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 0.45s ease;
+}
+
+
+.menu-drop:hover .drop-list {
+  max-height: 200px;    
+  overflow-y: auto;     
+}
+.drop-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.drop-list::-webkit-scrollbar-thumb {
+  background: #C9A24D;
+  border-radius: 10px;
+}
+.menu-wrapper {
+  max-height: 700px;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+.menu-wrapper.open {
+  max-height: 5000px;
+}
+
+
+.menu-toggle {
+  display: block;
+  margin: 35px auto 0;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #C9A24D, #A8842C);
+  color: #1F3D2B;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-toggle:hover {
+  background: #1F3D2B;
+  color: white;
+}
+.menu-toggle {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  z-index: 5;
+}
+
+
+
+#menu {
+  background: rgba(31, 61, 43, 0.06);
+}
+
+
+
+.menu-drop {
+  background: rgba(31, 61, 43, 0.03);
+}
+
+.about {
+  position: relative;
+  background: #FAFAFA;
+  padding: 120px 10%;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(31,61,43,0.35),
+    rgba(31,61,43,0.08),
+    transparent
+  );
+}
+
+.about-box {
+  max-width: 1000px;
+  margin: auto;
+  background: rgba(31,61,43,0.05);
+  border-radius: 30px;
+  padding: 70px;
+  border: 1px solid rgba(31,61,43,0.18);
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #1F3D2B;
+  margin-bottom: 15px;
+}
+
+.about-divider {
+  width: 90px;
+  height: 3px;
+  background: linear-gradient(90deg, #1F3D2B, #C9A24D);
+  margin: 0 auto 35px;
+  border-radius: 3px;
+}
+
+.about p {
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 35px;
+  margin-top: 55px;
+  text-align: center;
+}
+
+.about-features i {
+  font-size: 2.2rem;
+  color: #1F3D2B;
+  margin-bottom: 12px;
+  transition: 0.3s;
+}
+
+.about-features div:hover i {
+  color: #C9A24D;
+  transform: scale(1.15);
+}
+
+.about-features h4 {
+  color: #1F3D2B;
+  margin-bottom: 6px;
+}
+
+.about-features p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.footer {
+  background: #1F3D2B;
+  color: white;
+  padding: 70px 10% 35px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+.footer-brand img {
+  width: 90px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  margin-bottom: 15px;
+  color: #C9A24D;
+}
+
+.footer-links a {
+  display: block;
+  color: #eee;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #C9A24D;
+  padding-left: 5px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #C9A24D;
+  color: #1F3D2B;
+}
+
+.footer-divider {
+  margin: 45px 0 20px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A24D, transparent);
+}
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  font-family: "Georgia", serif;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #EAD7A1;
+  margin-bottom: 35px;
+}
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid #C9A24D;
+  color: #C9A24D;
+}
+
+.btn.outline:hover {
+  background: #C9A24D;
+  color: #1F3D2B;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+}
+
+.scroll-indicator span {
+  width: 26px;
+  height: 42px;
+  border: 2px solid #C9A24D;
+  border-radius: 20px;
+  display: block;
+  position: relative;
+}
+
+.scroll-indicator span::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #C9A24D;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% { opacity: 0; transform: translate(-50%, 0); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, 15px); }
+}
+.menu-drop.enfant {
+  border: 2px dashed #C9A24D;
+}
+
+.menu-drop.enfant img {
+  filter: brightness(1.05) saturate(1.1);
+}
+
+.menu-drop.enfant .drop-list h3 {
+  color: #1F3D2B;
+}
+
+.menu-drop.enfant::after {
+  content: "👶 Kids";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #C9A24D;
+  color: #1F3D2B;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.birthday-box {
+  background: linear-gradient(135deg, rgba(31,61,43,0.12), rgba(201,162,77,0.12));
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  border: 1px solid #C9A24D;
+}
+
+.birthday-box h3 {
+  color: #1F3D2B;
+  margin-bottom: 10px;
+}
+
+.birthday-box p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.animation-weekend {
+  background: linear-gradient(
+    to right,
+    rgba(31,61,43,0.08),
+    rgba(255,255,255,0.9)
+  );
+  padding: 90px 10%;
+}
+
+.animation-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  align-items: center;
+}
+
+.animation-text h2 {
+  color: #1F3D2B;
+  font-size: 2.4rem;
+}
+
+.animation-text p {
+  margin: 15px 0 20px;
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+.animation-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.animation-text li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.animation-video video {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  border: 3px solid #C9A24D;
+}
+.video-frame {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 9 / 16;
+  margin: auto;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 3px solid #C9A24D;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+  background: black;
+}
+
+.video-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+  </style>
+  
+
+
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+  <a href="#home" class="active">Home</a>
+  <a href="#menu">Menu</a>
+  <a href="#gallery">Galerie</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+   <h1 class="hero-title">La Ruche de Jardin</h1>
+<p class="hero-subtitle">
+  Gastronomie raffinée • Nature • Élégance
+</p>
+
+<div class="hero-buttons">
+  <a href="#menu" class="btn">Découvrir le menu</a>
+  <a href="#reservation" class="btn outline">Réserver</a>
+</div>
+
+<div class="scroll-indicator">
+  <span></span>
+</div>
+
+  </header>
+
+  <section class="about">
+  <div class="about-box">
+
+    <h2>Notre Concept</h2>
+    <div class="about-divider"></div>
+
+    <p>
+      <strong>La Ruche de Jardin</strong> est un espace où la cuisine,
+      la nature et l’élégance se rencontrent.  
+      Une expérience pensée pour le plaisir, le calme
+      et le partage, inspirée par l’esprit authentique de la ruche.
+    </p>
+
+    <div class="about-features">
+      <div>
+        <i class="fas fa-leaf"></i>
+        <h4>Fraîcheur</h4>
+        <p>Produits soigneusement sélectionnés</p>
+      </div>
+      <div>
+        <i class="fas fa-utensils"></i>
+        <h4>Savoir-faire</h4>
+        <p>Cuisine maîtrisée et élégante</p>
+      </div>
+      <div>
+        <i class="fas fa-spa"></i>
+        <h4>Ambiance</h4>
+        <p>Nature, calme et confort</p>
+      </div>
+    </div>
+<p style="margin-top:50px;font-style:italic;color:#777;text-align:center;">
+  « Là où la nature inspire chaque saveur »
+</p>
+
+  </div>
+</section>
+<section class="animation-weekend">
+  <div class="animation-content">
+
+    <div class="animation-text">
+      <h2>🎶 Animation Week-End</h2>
+      <p>
+        Chaque <strong>vendredi & samedi</strong>,  
+        <strong>La Ruche de Jardin</strong> vous propose  
+        une ambiance festive avec musique, animation et bonne humeur.
+      </p>
+
+      <ul>
+        <li>🎧 DJ & musique live</li>
+        <li>💃 Ambiance conviviale</li>
+        <li>✨ Moments inoubliables</li>
+      </ul>
+    </div>
+
+<div class="animation-video">
+  <div class="video-frame">
+    <video controls muted poster="image/tt.jpeg">
+      <source src="video/vid.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+
+  <section id="menu">
+    <h2>Menu</h2>
+    <div class="menu-wrapper" id="menuWrapper">
+  <div class="menu-full">
+<div class="menu-drop">
+    <img src="image/ftor1.jpg" alt="Petite déjeuner">
+
+    <div class="drop-list">
+      <h3>Petite déjeuner</h3>
+      <ul>
+        <li>Petite déjeuner normal <span>35 MAD</span></li>
+        <li>Petite déjeuner maison <span>55 MAD</span></li>
+        <li>Petite déjeuner crevette <span>60 MAD</span></li>
+        <li>Petite déjeuner fassi <span>58 MAD</span></li>
+        <li>Petite déjeuner océanique <span>50 MAD</span></li>
+        <li>Petite déjeuner Hawaï <span>50 MAD</span></li>
+        <li>Petite déjeuner Alsase <span>55 MAD</span></li>
+        <li>Petite déjeuner enfant <span>30 MAD</span></li>
+      </ul>
+    </div>
+  </div>
+<div class="menu-drop">
+    <img src="image/crepe.jpg" alt="Crêpes et Gaufres">
+
+    <div class="drop-list">
+      <h3>Crêpes salées à base d’illan</h3>
+      <ul>
+        <li>charcuterie <span>40 MAD</span></li>
+        <li>poulet <span>38 MAD</span></li>
+        <li> thon <span>35 MAD</span></li>
+        <li>Atlantic <span>38 MAD</span></li>
+        <li>océan <span>40 MAD</span></li>
+        <li> Crêpes Hawaï<span>50 MAD</span></li>
+        <h3>Crêpes sucrées</h3>
+        <li>Crêpes nutella <span>28 MAD</span></li>
+        <li>Crêpes nutella,noir,banane <span>30 MAD</span></li>
+        <li>Crêpes Pomme compot <span>35 MAD</span></li>
+        <li>Crêpes fruit exotique <span>40 MAD</span></li>
+        <h3>Gaufres</h3>
+        <li>Gaufres nutella <span>28 MAD</span></li>
+        <li>Gaufres nutella banane noix <span>30 MAD</span></li>
+        <li>Gaufres confiture fraise <span>25 MAD</span></li>
+        <li>Gaufres Pomme et amande <span>30 MAD</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="menu-drop">
+    <img src="image/jus1.jpg" alt="Jus">
+
+    <div class="drop-list">
+      <h3>Jus</h3>
+      <ul>
+        <li>Jus d’orange <span>20 MAD</span></li>
+        <li>Carotte à l’orange <span>22 MAD</span></li>
+        <li>Jus de citron <span>20 MAD</span></li>
+        <li>Jus de pomme <span>24 MAD</span></li>
+        <li>Jus de fraise <span>24 MAD</span></li>
+        <li>Jus de mangue <span>26 MAD</span></li>
+        <li>Jus de avocat <span>24 MAD</span></li>
+        <li>Avocat fruits sec <span>30 MAD</span></li>
+        <li>Panachi <span>30 MAD</span></li>
+        <li>Jus de ananas <span>24 MAD</span></li>
+        <li>Cocktail La ruche <span>39 MAD</span></li>
+        <h3>Smoothies</h3>
+        <li>Mango madness <span>32 MAD</span></li>
+        <li>Fruits rouges <span>32 MAD</span></li>
+        <li>Sweet melan <span>32 MAD</span></li>
+        <li>Tropical <span>32 MAD</span></li>
+        <li>Banoffee pie <span>40 MAD</span></li>
+        <h3>Milk shake/Frappuccino</h3>
+        <li>Caramel beurre <span>30 MAD</span></li>
+        <li>Noisette <span>30 MAD</span></li>
+        <li>Vanille <span>30 MAD</span></li>
+        <li>Fraise <span>30 MAD</span></li>
+        <li>chocolat oreo <span>35 MAD</span></li>
+        <h3>Cocktails</h3>
+        <li>Green life <span>30 MAD</span></li>
+        <li>Sun-rise <span>30 MAD</span></li>
+        <li>Virgin colada <span>28 MAD</span></li>
+        <li>Blue life <span>30 MAD</span></li>
+        <li>Sun-set<span>30 MAD</span></li>
+        <li>Pink pinacolada<span>30 MAD</span></li>
+        <h3>Mojitos</h3>
+         <li>Virgin<span>25 MAD</span></li>
+          <li>blueberry<span>30 MAD</span></li>
+           <li>Bubble gum<span>30 MAD</span></li>
+            <li>Strawberry<span>30 MAD</span></li>
+      </ul>
+    </div>
+  </div>
+ <div class="menu-drop">
+    <img src="image/burger.jpg" alt="Burger">
+
+    <div class="drop-list">
+      <h3>Burgers</h3>
+      <ul>
+        <li>Hamburger <span>30 MAD</span></li>
+        <li>Cheese burger <span>35 MAD</span></li>
+        <li>Double cheese burger<span>45 MAD</span></li>
+        <li>Chiken burger<span>35 MAD</span></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="menu-drop">
+    <img src="image/food.jpg" alt="Pizza">
+
+    <div class="drop-list">
+      <h3>Pizzas</h3>
+      <ul>
+        <li>Margherita <span>30 MAD</span></li>
+        <li>finghi <span>45 MAD</span></li>
+        <li>poulet <span>45 MAD</span></li>
+        <li>Thon <span>40 MAD</span></li>
+        <li>Végétarienne <span>40 MAD</span></li>
+        <li>Pizza Burger <span>40 MAD</span></li>
+        <li>4 Fromages <span>45 MAD</span></li>
+        <li>Pizza Viande hachée <span>50 MAD</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="menu-drop">
+    <img src="image/download.jpg" alt="Tacos">
+
+    <div class="drop-list">
+      <h3>Tacos</h3>
+      <ul>
+        <li>poulet <span>35 MAD</span></li>
+        <li>viande hachée<span>40 MAD</span></li>
+        <li>fruit de mer <span>50 MAD</span></li>
+        <li>nuggets <span>35 MAD</span></li>
+        <li>mixte <span>45 MAD</span></li>
+        <h3>Sandwiches</h3>
+        <li>Sandwiches poulet <span>30 MAD</span></li>
+        <li>Sandwiches viande hachée<span>35 MAD</span></li>
+        <li>Sandwiches mergez <span>35 MAD</span></li>
+        <li>Sandwiches de fois <span>40 MAD</span></li>
+        <li>Sandwiches Chiken crispy <span>40 MAD</span></li>
+        <li>Sandwiches mixte <span>40 MAD</span></li>
+        <li>Sandwiches Fruits de mer <span>40 MAD</span></li>
+
+      </ul>
+    </div>
+  </div>
+  
+  <div class="menu-drop">
+    <img src="image/pate.jpg" alt="Pâtes">
+
+    <div class="drop-list">
+      <h3>Pâtes</h3>
+      <ul>
+        <li>spaguetti Bolonaise <span>50 MAD</span></li>
+        <li>Futtuccini Alfredo <span>55 MAD</span></li>
+        <li>Tagliatelle fruit de mer <span>60 MAD</span></li>
+        <li>Tagliatelle Carbonara <span>50 MAD</span></li>
+        <li>Tagliatelle au saumon <span>65 MAD</span></li>
+        <li>Tagliatelle royale <span>70 MAD</span></li>
+        <li>Penné thon <span>50 MAD</span></li>
+        <li>Lasagne classique <span>55 MAD</span></li>
+        <li>Gratin Carbonara <span>55 MAD</span></li>
+        <li>Gratin de l’océon <span>65 MAD</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="menu-drop">
+    <img src="image/salade.jpg" alt="Salades">
+
+    <div class="drop-list">
+      <h3>Salades</h3>
+      <ul>
+        <li>salade maroccaine <span>25 MAD</span></li>
+        <li>salade césar <span>38 MAD</span></li>
+        <li>salade césar gambas <span>40 MAD</span></li>
+        <li>salade pêcheur <span>45 MAD</span></li>
+        <li>salade mexican <span>30 MAD</span></li>
+        <li>salade Surprise <span>60 MAD</span></li>
+        <li>salade nicoise <span>35 MAD</span></li>
+        <h3>Soupes</h3>
+        <li>Soupe de poisson <span>30 MAD</span></li>
+        <li>Bisque crevette <span>30 MAD</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="menu-drop">
+    <img src="image/poisson.jpg" alt="Poissons">
+
+    <div class="drop-list">
+      <h3>Poissons</h3>
+      <ul>
+        <li>Friture mixte <span>80 MAD</span></li>
+        <li>Friture mixte grillée <span>90 MAD</span></li>
+        <li>Filet de soumo <span>85 MAD</span></li>
+        <li>Pastilla fruits de mer (1p)<span>50 MAD</span></li>
+        <li>Pastilla fruits de mer (2p) <span>90 MAD</span></li>
+        <li>Espadon marinade et grillé <span>85 MAD</span></li>
+        <var><li>marmite de pêcheur <span>85 MAD</span></li>
+        <li>paella espagnole 1p <span>60 MAD</span></li></var>
+        <li>paella espagnole 2p <span>100 MAD</span></li></var>
+        <h3>Poêle</h3>
+        <li>Poêle calamar <span>50 MAD</span></li></var>
+        <li>Poêle crevettes <span>65 MAD</span></li></var>
+        <li>Poêle à moules <span>60 MAD</span></li></var>
+      </ul>
+    </div>
+  </div>
+  <div class="menu-drop">
+    <img src="image/usa.jpg" alt="Plats">
+
+    <div class="drop-list">
+      <h3>Plats</h3>
+      <ul>
+        <li>Emincé de poulet <span>55 MAD</span></li>
+        <li>Escalope de poulet grillé <span>55 MAD</span></li>
+        <li>Apollo à la crème <span>55 MAD</span></li>
+        <li>Brochette de poulet <span>55 MAD</span></li>
+        <li>Cordon Bleu <span>60 MAD</span></li>
+        <li>Mixte grillé <span>70 MAD</span></li>
+        <li>Plat Fois <span>90 MAD</span></li>
+        <li>Plat cuisse de poulet <span>50 MAD</span></li>
+        <li>Plat Chicken <span>50 MAD</span></li>
+        <li>poulet 1/4 kg <span>39 MAD</span></li>
+        <li> poulet 1/2 kg<span>60 MAD</span></li>
+        <li>Couclet grillée <span>60 MAD</span></li>
+        <li>Risotto poulet <span>40 MAD</span></li>
+        <li>Risotto fruits de mer <span>50 MAD</span></li>
+        <h3>Plats viande</h3>
+        <li>Emincé de boeuf <span>60 MAD</span></li>
+        <li>Entrecôte mariné et grillé <span>75 MAD</span></li>
+        <li>Brochette viande hachée <span>60 MAD</span></li>
+        <li>Tamjia 1/2 kg <span>95 MAD</span></li>
+        <li>Tanjia 1kg <span>190 MAD</span></li>
+        <li>Tajine Viande hachée <span>40 MAD</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="menu-drop">
+    <img src="image/Nutella Tiramisu.jpg" alt="Gâteaux">
+
+    <div class="drop-list">
+      <h3>Gâteaux</h3>
+      <ul>
+        <li>Tartelette citron <span>20 MAD</span></li>
+        <li>Tartelette amandine <span>20 MAD</span></li>
+        <li>Cheesecake citron <span>20 MAD</span></li>
+        <li>Cheesecake framboise <span>20 MAD</span></li>
+        <li>Cheesecake oreo <span>20 MAD</span></li>
+        <li>forêt noire <span>22 MAD</span></li>
+        <li>Opéra <span>22 MAD</span></li>
+        <li>Nougatine <span>22 MAD</span></li>
+        <li>Snickers <span>24 MAD</span></li>
+        <h3>Viennoiserie</h3>
+        <li>Croissant simple <span>7 MAD</span></li>
+        <li>Pain chocolat <span>8 MAD</span></li>
+        <li>Pain suisse <span>9 MAD</span></li>
+        <li>pain au raisin <span>9 MAD</span></li>
+        <li>Fourré <span>9 MAD</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="menu-drop">
+    <img src="image/glace.jpg" alt="Desserts">
+
+    <div class="drop-list">
+      <h3>Desserts</h3>
+      <ul>
+        <li>Crème carame <span>15 MAD</span></li>
+        <li>Tiramisu <span>18 MAD</span></li>
+        <li>Panacotta <span>18 MAD</span></li>
+        <li>Salade fruits <span>20 MAD</span></li>
+        <li>Nougat glacé <span>20 MAD</span></li>
+        <h3>Glaces</h3>
+        <li>Coupe simple (2 boules) <span>20 MAD</span></li>
+        <li>Coupe Triple (3 boules) <span>26 MAD</span></li>
+        <li>Coupe Oreo (3 boules) <span>28 MAD</span></li>
+        <li>Coupe Tropicana <span>32 MAD</span></li>
+        <li>Coupe La ruche Du Jardin <span>40 MAD</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="menu-drop">
+    <img src="image/the1.jpg" alt="Boissons">
+
+    <div class="drop-list">
+      <h3>Boissons chaudes</h3>
+      <ul>
+        <li>Expresso maison <span>15 MAD</span></li>
+        <li>Café latte <span>15 MAD</span></li>
+        <li>Cappuccino <span>16 MAD</span></li>
+        <li>Chocolat chaud <span>18 MAD</span></li>
+        <li>Thé à la menthe <span>14 MAD</span></li>
+        <li>thé noir <span>14 MAD</span></li>
+        <li>Verveine <span>14 MAD</span></li>
+        <li>Verveine au lait <span>14 MAD</span></li>
+        <h3>Boissons fraiches</h3>
+        <li>Soda <span>12 MAD</span></li>
+        <li>Orangina <span>15 MAD</span></li>
+        <li>Sidi Ali 50 cl <span>10 MAD</span></li>
+        <li>Sidi Ali 75 cl <span>16 MAD</span></li>
+        <li>Oualmes 50 cl <span>12 MAD</span></li>
+        <li>Oualmes 1L <span>16 MAD</span></li>
+        <li>Oualmes Tropical <span>12 MAD</span></li>
+      </ul>
+    </div>
+  </div>
+<div class="menu-drop enfant">
+  <img src="image/kids.jpg" alt="Menu Enfant">
+
+  <div class="drop-list">
+    <h3>Menu Enfant</h3>
+    <ul>
+      <li>Mini pizza margaritta + boisson  <span>30 MAD</span></li>
+      <li>Mini Burger + boisson<span>30 MAD</span></li>
+      <li>Mini chicken + boisson <span>30 MAD</span></li>
+      
+      
+    </ul>
+  </div>
+</div>
+
+</div>
+    </div>
+<button class="menu-toggle" id="menuToggle">
+    Voir plus
+  </button>
+  </section>
+   <section id="gallery">
+  <h2>Galerie</h2>
+
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="image/restaurant1.jpg" alt="La Ruche de Jardin">
+    </div>
+    <div class="gallery-item">
+      <img src="image/sf.jpeg" alt="Ambiance">
+    </div>
+    <div class="gallery-item">
+      <img src="image/mm.jpeg" alt="Cuisine">
+    </div>
+    <div class="gallery-item">
+      <img src="image/you.jpeg" alt="Terrasse">
+    </div>
+    <div class="gallery-item">
+      <img src="image/jj.jpeg" alt="Plats">
+    </div>
+    <div class="gallery-item">
+      <img src="image/html.jpeg" alt="Desserts">
+    </div>
+  </div>
+</section>
+<section id="reservation">
+  <h2>Réserver une table</h2>
+<div class="birthday-box">
+  <h3>🎂 Réservation Anniversaire</h3>
+  <p>
+    Célébrez votre anniversaire à <strong>La Ruche de Jardin</strong>  
+    avec une ambiance spéciale et une attention particulière.
+  </p>
+</div>
+
+  <form class="reservation-form">
+    <input type="text" placeholder="Nom complet" required>
+    <input type="tel" placeholder="Téléphone" required>
+    <input type="email" placeholder="Email">
+
+    <input type="date" required>
+    <input type="time" required>
+
+    <select required>
+      <option value="">Nombre de personnes</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5+</option>
+    </select>
+<select required>
+  <option value="">Type de réservation</option>
+  <option>Réservation classique</option>
+  <option>🎂 Anniversaire</option>
+</select>
+<select>
+  <option value="">Souhaitez-vous ?</option>
+  <option>🎂 Gâteau d’anniversaire</option>
+  <option>🎈 Décoration spéciale</option>
+  <option>🎶 Ambiance musicale</option>
+</select>
+
+    <textarea placeholder="Message (ex: anniversaire, décoration souhaitée, nombre d’enfants…)"></textarea>
+
+
+    <button type="submit">Réserver maintenant</button>
+  </form>
+</section>
+
+  <section class="contact" id="contact">
+    <h2>Nous Trouver</h2>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d17270.0741981416!2d-7.602521035796736!3d33.2645994015742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sCaf%C3%A9%20la%20ruche%20du%20jardin%20Quartier%20Layali%2C%20Berrechid%2C%20Morocco!5e1!3m2!1sen!2sma!4v1767985714194!5m2!1sen!2sma" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p style="text-align:center;margin-top:15px;">📍 Adresse du restaurant<br>📞 Téléphone 0520502676| 🕒 6h – 00h</p>
+  </section>
+
+  <a href="tel:+212520502676" class="call-fixed">📞 Call</a>
+
+  <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="image/poo.jpeg" alt="La Ruche de Jardin">
+      <p>
+        Une expérience culinaire élégante,
+        inspirée par la nature et l’esprit de la ruche.
+      </p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Galerie</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-social">
+      <h4>Suivez-nous</h4>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/restaurant_laruche?igsh=MTRuaHBzMWlreWFzZA%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1CeD245wK4/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    © 2026 La Ruche de Jardin – Tous droits réservés
+    <div style="margin-top:8px;font-size:0.75rem;color:#aaa;">
+  Designed with ❤️ by La Ruche Team
+</div>
+
+  </div>
+</footer>
+
+
+<script>
+  document.querySelectorAll('.menu-drop').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('open');
+    });
+  });
+
+  document.querySelector('.reservation-form')
+    .addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("✅ Votre réservation a été envoyée !");
+      this.reset();
+    });
+</script>
+<script>
+  const btn = document.getElementById("menuToggle");
+  const menu = document.getElementById("menuWrapper");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("open");
+
+    btn.textContent = menu.classList.contains("open")
+      ? "Voir moins"
+      : "Voir plus";
+  });
+</script>
+<script>
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
+
+
+</body>
+</html>
