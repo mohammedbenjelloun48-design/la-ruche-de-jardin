@@ -953,6 +953,122 @@ input, select, textarea {
 #optionsBox {
   display: none;
 }
+.confirmation {
+  display: none;
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #1F3D2B, #2f5d40);
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+.reservation-pro {
+  background: linear-gradient(
+    to bottom,
+    rgba(31,61,43,0.08),
+    rgba(255,255,255,0.9)
+  );
+  padding: 100px 10%;
+}
+
+.reservation-box {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 35px;
+  padding: 70px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+  border: 2px solid #C9A24D;
+}
+
+.reservation-box h2 {
+  text-align: center;
+  color: #1F3D2B;
+  font-size: 2.6rem;
+}
+
+.reservation-subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 35px;
+}
+
+.birthday-highlight {
+  background: linear-gradient(135deg,#C9A24D,#A8842C);
+  color: #1F3D2B;
+  padding: 12px;
+  text-align: center;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+
+.reservation-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1F3D2B;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.options-box {
+  display: none;
+  grid-column: 1 / -1;
+}
+
+.reservation-form button {
+  grid-column: 1 / -1;
+  padding: 18px;
+  border-radius: 40px;
+  border: none;
+  background: linear-gradient(135deg,#C9A24D,#A8842C);
+  color: #1F3D2B;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reservation-form button:hover {
+  background: #1F3D2B;
+  color: white;
+  transform: scale(1.05);
+}
 
 
   </style>
@@ -1404,67 +1520,84 @@ input, select, textarea {
     </div>
   </div>
 </section>
-<section id="reservation">
-  <h2>Réserver une table</h2>
+<section id="reservation" class="reservation-pro">
+  <div class="reservation-box">
 
-  <div class="birthday-box">
-    <h3>🎂 Réservation Anniversaire</h3>
-    <p>
-      Célébrez votre anniversaire à <strong>La Ruche de Jardin</strong>
-      avec une ambiance spéciale et une attention particulière.
+    <h2>Réserver une table</h2>
+    <p class="reservation-subtitle">
+      Une expérience élégante vous attend
     </p>
+
+    <div class="birthday-highlight">
+      🎂 Réservation anniversaire disponible avec options personnalisées
+    </div>
+
+    <form class="reservation-form">
+
+      <div class="field">
+        <label>Nom complet</label>
+        <input type="text" name="nom" required>
+      </div>
+
+      <div class="field">
+        <label>Téléphone</label>
+        <input type="tel" name="telephone" required>
+      </div>
+
+      <div class="field">
+        <label>Email (optionnel)</label>
+        <input type="email" name="email">
+      </div>
+
+      <div class="field">
+        <label>Date</label>
+        <input type="date" name="date" required>
+      </div>
+
+      <div class="field">
+        <label>Heure</label>
+        <input type="time" name="heure" required>
+      </div>
+
+      <div class="field">
+        <label>Nombre de personnes</label>
+        <select name="personnes" required>
+          <option value="">Choisir</option>
+          <option>1</option><option>2</option><option>3</option>
+          <option>4</option><option>5+</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Type de réservation</label>
+        <select name="type" id="typeReservation" required>
+          <option value="">Choisir</option>
+          <option value="classique">Réservation classique</option>
+          <option value="anniversaire">🎂 Anniversaire</option>
+        </select>
+      </div>
+
+      <!-- OPTIONS ANNIVERSAIRE -->
+      <div class="field options-box" id="optionsBox">
+        <label>Options anniversaire</label>
+        <select name="options[]" multiple>
+          <option>🎂 Gâteau</option>
+          <option>🎈 Décoration</option>
+          <option>🎶 Ambiance musicale</option>
+        </select>
+      </div>
+
+      <div class="field full">
+        <label>Message</label>
+        <textarea name="message" placeholder="Détails, enfants, thème..."></textarea>
+      </div>
+
+      <button type="button" onclick="sendWhatsApp()">
+        Confirmer la réservation
+      </button>
+
+    </form>
   </div>
-
-  <form class="reservation-form">
-
-  <input type="text" name="nom" placeholder="Nom complet" required>
-  <input type="tel" name="telephone" placeholder="Téléphone" required>
-  <input type="email" name="email" placeholder="Email">
-
-  <div class="reservation-field">
-    <label>📅 Date</label>
-    <input type="date" name="date" required>
-  </div>
-
-  <div class="reservation-field">
-    <label>⏰ Heure</label>
-    <input type="time" name="heure" required>
-  </div>
-
-  <select name="personnes" required>
-    <option value="">Nombre de personnes</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5+</option>
-  </select>
-
- <select name="type" id="reservationType" required>
-  <option value="">Type de réservation</option>
-  <option value="classique">Réservation classique</option>
-  <option value="anniversaire">🎂 Anniversaire</option>
-</select>
-
-
-  <!-- CHOIX MULTIPLES -->
-  <div class="reservation-field" id="optionsBox">
-  <label>Souhaitez-vous ?</label>
-  <small>يمكنك اختيار أكثر من خيار</small>
-
-  <select name="options[]" multiple size="3">
-    <option value="🎂 Gâteau d’anniversaire">🎂 Gâteau d’anniversaire</option>
-    <option value="🎈 Décoration spéciale">🎈 Décoration spéciale</option>
-    <option value="🎶 Ambiance musicale">🎶 Ambiance musicale</option>
-  </select>
-</div>
-
-  <textarea name="message" placeholder="Message (ex : thème, enfants, détails...)"></textarea>
-
-  <button type="button" onclick="sendWhatsApp()">Réserver maintenant</button>
-
-</form>
-
 </section>
 
 
@@ -1552,42 +1685,45 @@ window.addEventListener("scroll", () => {
 </script>
 <script>
 function sendWhatsApp() {
-  const nom = document.querySelector('[name="nom"]').value.trim();
-  const tel = document.querySelector('[name="telephone"]').value.trim();
+  const nom = document.querySelector('[name="nom"]').value;
+  const tel = document.querySelector('[name="telephone"]').value;
+  const email = document.querySelector('[name="email"]').value;
   const date = document.querySelector('[name="date"]').value;
   const heure = document.querySelector('[name="heure"]').value;
   const personnes = document.querySelector('[name="personnes"]').value;
-  const type = document.querySelector('[name="type"]').value;
+  const type = document.getElementById("reservationType").value;
+
+  let options = [];
+  document.querySelectorAll('[name="options[]"] option:checked')
+    .forEach(opt => options.push(opt.value));
+
   const message = document.querySelector('[name="message"]').value;
 
-  // Options multiples
-  const optionsSelect = document.querySelector('[name="options[]"]');
-  const options = [...optionsSelect.selectedOptions].map(o => o.value).join(', ') || 'Aucune';
+  const text =
+`📌 *Nouvelle réservation*
+👤 Nom: ${nom}
+📞 Téléphone: ${tel}
+📧 Email: ${email || "-"}
+📅 Date: ${date}
+⏰ Heure: ${heure}
+👥 Personnes: ${personnes}
+📋 Type: ${type}
+🎁 Options: ${options.join(", ") || "Aucune"}
+📝 Message: ${message || "-"}
 
-  if (!nom || !tel || !date || !heure || !personnes || !type) {
-    alert("❗ المرجو ملء جميع الخانات الضرورية");
-    return;
-  }
+✅ Merci pour votre réservation.
+📞 Nous vous confirmerons très bientôt.`;
 
-  const text = 
-`🍽️ *Nouvelle réservation*
-👤 Nom : ${nom}
-📞 Téléphone : ${tel}
-
-📅 Date : ${date}
-⏰ Heure : ${heure}
-👥 Personnes : ${personnes}
-🎯 Type : ${type}
-✨ Options : ${options}
-
-📝 Message : ${message || '—'}`;
-
-  const whatsappNumber = "212705738779"; // عدّل الرقم إذا بغيت
-  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+  const phone = "212600000000"; // ← رقم المطعم
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
   window.open(url, "_blank");
+
+  // 🔔 رسالة تأكيد فالموقع
+  document.getElementById("confirmationMessage").style.display = "block";
 }
 </script>
+
 <script>
 const reservationType = document.getElementById("reservationType");
 const optionsBox = document.getElementById("optionsBox");
@@ -1634,9 +1770,19 @@ function sendWhatsApp() {
 }
 </script>
 
+<script>
+const type = document.getElementById("typeReservation");
+const options = document.getElementById("optionsBox");
+
+type.addEventListener("change", () => {
+  options.style.display =
+    type.value === "anniversaire" ? "block" : "none";
+});
+</script>
 
 </body>
 </html>
+
 
 
 
