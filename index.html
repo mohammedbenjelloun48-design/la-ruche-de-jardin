@@ -924,6 +924,32 @@ section.show {
 input, select, textarea {
   font-size: 16px;
 }
+.reservation-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation-field label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #1F3D2B;
+}
+
+.options {
+  margin-top: 15px;
+}
+
+.options p {
+  margin-bottom: 8px;
+  color: #1F3D2B;
+}
+
+.options label {
+  display: block;
+  margin-bottom: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
 
 
   </style>
@@ -1402,29 +1428,68 @@ input, select, textarea {
 
     <select required>
       <option value="">Nombre de personnes</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5+</option>
-    </select>
-<select required>
-  <option value="">Type de réservation</option>
-  <option>Réservation classique</option>
-  <option>🎂 Anniversaire</option>
-</select>
-<select>
-  <option value="">Souhaitez-vous ?</option>
-  <option>🎂 Gâteau d’anniversaire</option>
-  <option>🎈 Décoration spéciale</option>
-  <option>🎶 Ambiance musicale</option>
-</select>
+       <form class="reservation-form">
 
-    <textarea placeholder="Message (ex: anniversaire, décoration souhaitée, nombre d’enfants…)"></textarea>
+  <input type="text" placeholder="Nom complet" required>
+  <input type="tel" placeholder="Téléphone" required>
+  <input type="email" placeholder="Email">
 
+  <!-- Date -->
+  <div class="reservation-field">
+    <label>📅 Date</label>
+    <input type="date" required>
+  </div>
 
-    <button type="submit">Réserver maintenant</button>
-  </form>
+  <!-- Heure -->
+  <div class="reservation-field">
+    <label>⏰ Heure</label>
+    <input type="time" required>
+  </div>
+
+  <!-- Personnes -->
+  <select required>
+    <option value="">Nombre de personnes</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5+</option>
+  </select>
+
+  <!-- Type -->
+  <select required>
+    <option value="">Type de réservation</option>
+    <option>Réservation classique</option>
+    <option>🎂 Anniversaire</option>
+  </select>
+
+  <!-- OPTIONS MULTIPLES -->
+  <div class="options">
+    <p><strong>Souhaitez-vous :</strong></p>
+
+    <label>
+      <input type="checkbox" value="Gâteau d’anniversaire">
+      🎂 Gâteau d’anniversaire
+    </label>
+
+    <label>
+      <input type="checkbox" value="Décoration spéciale">
+      🎈 Décoration spéciale
+    </label>
+
+    <label>
+      <input type="checkbox" value="Ambiance musicale">
+      🎶 Ambiance musicale
+    </label>
+  </div>
+
+  <textarea placeholder="Message (ex : thème, enfants, détails...)"></textarea>
+
+  <button type="submit">Réserver maintenant</button>
+
+</form>
+
+      <option>
 </section>
 
   <section class="contact" id="contact">
@@ -1513,6 +1578,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
