@@ -1820,9 +1820,50 @@ ${message || "—"}`;
   window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
 }
 </script>
+<script>
+function sendWhatsApp() {
+  const nom = document.querySelector('[name="nom"]').value;
+  const tel = document.querySelector('[name="telephone"]').value;
+  const email = document.querySelector('[name="email"]').value;
+  const date = document.querySelector('[name="date"]').value;
+  const heure = document.querySelector('[name="heure"]').value;
+  const personnes = document.querySelector('[name="personnes"]').value;
+  const type = document.querySelector('[name="type"]').value;
+  const message = document.querySelector('[name="message"]').value;
+
+  const optionsSelect = document.querySelector('[name="options[]"]');
+  const options = Array.from(optionsSelect.selectedOptions)
+    .map(option => option.value)
+    .join(', ');
+
+  const phoneNumber = "212705738779"; // ← دير هنا رقم واتساب ديال الريستوران
+
+  const text =
+`📌 Nouvelle réservation – La Ruche de Jardin
+
+👤 Nom: ${nom}
+📞 Téléphone: ${tel}
+📧 Email: ${email}
+
+📅 Date: ${date}
+⏰ Heure: ${heure}
+👥 Personnes: ${personnes}
+📍 Type: ${type}
+
+✨ Options:
+${options || "Aucune"}
+
+📝 Message:
+${message || "—"}`;
+
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
+
 
 
 
