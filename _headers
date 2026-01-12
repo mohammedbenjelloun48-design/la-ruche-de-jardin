@@ -8,3 +8,5 @@
     style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline';
     img-src 'self' data: https:;
     frame-src https://www.google.com;
+<input type="hidden" name="subject" value="Nouvelle réservation – La Ruche">
+
